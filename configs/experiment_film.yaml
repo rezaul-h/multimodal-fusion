@@ -1,0 +1,68 @@
+# Directory paths
+dataset_root: "./data/dataset"
+preprocessed_root: "./data/preprocessed"
+features_root: "./data/features"
+checkpoints_dir: "./checkpoints"
+logs_dir: "./logs"
+results_dir: "./results"
+
+# Data settings
+img_size: [128, 128]
+audio_sr: 16000
+audio_duration: 3.0
+num_classes: 21
+
+# Training
+batch_size: 64
+num_epochs: 30         # Slightly more epochs for attention model
+learning_rate: 0.0007  # Tune for attention models
+weight_decay: 0.00001
+optimizer: "adamax"    # Adamax/Adam works well for attention
+scheduler: "none"
+val_size: 0.05
+test_size: 0.15
+random_seed: 99        # Different seed for reproducibility
+num_workers: 4
+patience: 12           # Early stopping patience
+
+# Model
+model_type: "film"     # Attention-based fusion
+use_xlstm: true        # Still use xLSTM for audio sequence
+use_ridgelet: true
+vision_backbone: "xception"
+audio_branch: "xlstm"
+fusion_method: "film"  # FiLM fusion
+dropout: 0.4           # Slightly lower for attention
+film:
+  n_layers: 2
+  hidden_dim: 256
+  modulation_type: "sigmoid"  # or "relu", "tanh"
+  use_residual: true
+
+# Augmentation
+augmentation:
+  image:
+    flip: true
+    rotate: true
+    color_jitter: true
+    gaussian_noise: false
+    random_crop: true
+  audio:
+    add_noise: true
+    time_stretch: true
+    pitch_shift: true
+
+# Reproducibility
+deterministic: true
+
+# Hardware
+device: "cuda"
+
+# Logging
+log_interval: 10
+log_level: "info"
+save_best_only: true
+
+# Output
+save_predictions: true
+save_metrics: true

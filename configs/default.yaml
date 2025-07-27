@@ -1,0 +1,86 @@
+# Directory paths
+dataset_root: "./data/dataset"
+preprocessed_root: "./data/preprocessed"
+features_root: "./data/features"
+checkpoints_dir: "./checkpoints"
+logs_dir: "./logs"
+results_dir: "./results"
+
+# Data settings
+img_size: [128, 128]
+audio_sr: 16000
+audio_duration: 3.0
+num_classes: 21
+class_names:
+  - Metal
+  - Paper
+  - Plastic
+  - Gasoline Can
+  - Glass
+  - Batteries
+  - Light Bulbs
+  - General E-Waste
+  - Bed
+  - Chair
+  - Sofa
+  - Swivel Chair
+  - Table
+  - Hammer
+  - Pliers
+  - Screwdriver
+  - Wrench
+  - Toolbox
+  - Clothes
+  - Rope
+  - Organic
+
+# Training
+batch_size: 64
+num_epochs: 25
+learning_rate: 0.001
+weight_decay: 0.00001
+optimizer: "adam"
+scheduler: "none"     # or 'cosine', 'step'
+val_size: 0.05
+test_size: 0.15
+random_seed: 42
+num_workers: 4
+patience: 10
+gradient_clip: 5.0
+
+# Model
+model_type: "hybrid"     # hybrid, tensor, film
+use_xlstm: true          # Use xLSTM branch for audio
+use_ridgelet: true       # Extract ridgelet features
+vision_backbone: "xception"  # or 'resnet', etc.
+audio_branch: "xlstm"        # or 'lstm'
+fusion_method: "hybrid"      # hybrid, tensor, film
+dropout: 0.5
+
+# Augmentation
+augmentation:
+  image:
+    flip: true
+    rotate: true
+    color_jitter: true
+    gaussian_noise: true
+    random_crop: false
+  audio:
+    add_noise: true
+    time_stretch: false
+    pitch_shift: false
+
+# Reproducibility
+deterministic: true
+
+# Hardware
+device: "cuda"
+
+# Logging
+log_interval: 10
+log_level: "info"
+save_best_only: true
+
+# Output
+save_predictions: true
+save_metrics: true
