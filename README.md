@@ -80,7 +80,7 @@ python main.py --config configs/experiment_xlstm.yaml
 
 Logs, checkpoints, and results will be saved in the respective folders.
 
-🧩 Key Features
+## Key Features
 - Fully modular: Plug in any backbone or fusion type by YAML config.
 
 - Reproducible: All random seeds set; configs are versioned.
@@ -97,22 +97,22 @@ Logs, checkpoints, and results will be saved in the respective folders.
 
 - Easy to extend: Add new fusion models, features, or datasets with minimal code changes.
 
-📊 Results & Benchmarks
+## Results & Benchmarks
 The framework achieves state-of-the-art performance on a 21-class audio-visual object dataset, surpassing classic tensor fusion and single-modality baselines.
 
-🤝 Contributing
+## Contributing
 Pull requests are welcome!
 
 Open issues for bug reports or feature suggestions.
 
 Please follow PEP8 for Python code style.
 
-🛠️ Troubleshooting
+## Troubleshooting
 If you encounter memory issues, reduce batch_size or image size in config.
 
 For reproducibility, ensure your CUDA/cuDNN, PyTorch, and all packages match requirements.txt.
 
 For help with dataset formatting, see sample scripts in preprocessing/.
 
-📧 Contact
+## Contact
 Questions? Reach out by rezaulh603@gmail.com or open a GitHub issue.
