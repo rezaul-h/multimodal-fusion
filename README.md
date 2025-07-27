@@ -4,19 +4,33 @@ This repository provides a modular and reproducible pipeline for multimodal obje
 **Supports: Xception, (x)LSTM, Ridgelet, SIFT, LBP, SC, PSSF, SMOTE, class weights, and more.**
 
 ## 📂 Project Structure
+
 ├── configs/ # YAML experiment configs (default, FiLM, xLSTM)
+
 ├── data/ # Raw and processed datasets (not included here)
+
 ├── features/ # Audio/image feature extraction scripts
+
 ├── fusion/ # Fusion layers (tensor, hybrid, FiLM)
+
 ├── models/ # Model architectures (vision, audio, fusion)
+
 ├── preprocessing/ # Preprocessing and augmentation scripts
+
 ├── scripts/ # Scripts for running experiments, evaluation, etc.
+
 ├── training/ # Training pipeline
+
 ├── utils/ # Utilities: config, logger, seed, SMOTE, class weights
+
 ├── logs/ # Log files (auto-generated)
+
 ├── results/ # Result tables, plots, YAMLs (auto-generated)
+
 ├── main.py # Main runner script (configurable)
+
 ├── requirements.txt
+
 └── README.md
 
 
@@ -38,12 +52,19 @@ Dataset is available in 'https://drive.google.com/drive/folders/1aqMjK1U9Oas4OD5
 
 Structure:
 /dataset/
+
 ├── class_1/
+
 │    ├── audio/
+
 │    └── image/
+
 ├── class_2/
+
 │    ├── audio/
+
 │    └── image/
+
 └── ...
 
 ### 4. Configure your experiment
